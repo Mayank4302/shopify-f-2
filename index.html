@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body>
+    <div class="main relative  ">
+        <div class="popup absolute z-[20] h-screen bg-[#0000008d] hidden w-full  flex justify-center items-center">
+            <div class="popup-menu  w-[40%] rounded-md bg-white ">
+                <div class="pop-up flex items-center justify-end gap-48">
+                    <h1 class="text-center text-3xl border-b-2 border-[#ef4040] font-medium mt-4 text-[#ef4040]">
+                        Register</h1>
+                    <i class=" close-btn cursor-pointer ri-close-large-line mr-12 text-lg"></i>
+                </div>
+                <form action="backend.php " class="pt-12 ml-12  ">
+                    <label class="text-xl" for="name">Enter your mobile no.</label>
+                    <input class="border-2 mb-2 rounded-md text-lg px-6 py-1 w-72 " type="number" name="name" id=""
+                        placeholder="Enter your mobile number..">
+                    <br class="">
+                    <label class="text-xl" for="email">Enter your email</label>
+                    <input class="border-2 mb-2 rounded-md text-lg px-6 py-1 w-72 " type="email" name="email" id=""
+                        placeholder="Enter your name..">
+                    <br>
+                    <label class="text-xl" for="pass">Enter your password</label>
+                    <input class=" border-2 rounded-md text-lg px-6 py-1 w-72 " type="password" name="pass" id=""
+                        placeholder="Enter your name..">
+                    <br>
+                    <input class="mt-4 text-xl" type="checkbox" name="box">
+                    <label for="box text-xl">Remember me</label>
+                    <a href="#" class="ml-48 mt-4">forgot password?</a>
+                    <br>
+                    <button type="submit "
+                        class="px-3 py-2 text-lg border-2 font-normal hover:text-white border-[#ef4040] rounded-md ml-48 mb-8 hover:bg-[#ef4040]">Sign
+                        up</button>
+
+                </form>
+            </div>
+        </div>
+
+        <div class="product-container">
+
+            <div class="product-images">
+                <img id="mainImage"
+                    src="https://www.boat-lifestyle.com/cdn/shop/products/32011675-2ad8-4b99-9787-895caf201d28_600x.png?v=1642405569"
+                    alt="Product Image">
+                <div class="thumbnail-images">
+                    <div class="imgs flex gap-4 ml-3 mt-3">
+                        <img src="https://www.boat-lifestyle.com/cdn/shop/products/FeatureImagesAD1314XChargecopy2_800x.jpg?v=1718351991"
+                            alt="Product Image" onclick="changeImage('4.webp')">
+                        <img src="https://www.boat-lifestyle.com/cdn/shop/products/ad131FIAD131TypeCcopy2_800x.jpg?v=1718351991"
+                            alt="Product Image" onclick="changeImage('5.webp')">
+                        <img src="https://www.boat-lifestyle.com/cdn/shop/products/FeatureImagesAD131VAcopy2_800x.jpg?v=1718351991"
+                            alt="Product Image" onclick="changeImage('2.webp')">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="product-info mt-12">
+                <h1 id="productTitle " class="text-5xl capitalize text-[#ed1c24]">Boat earbuds</h1>
+                <p id="productDescription" class="w-1/2 text-lg">Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. Quasi, modi eius nemo, eaque itaque dicta ipsam veritatis minima alias quisquam soluta id
+                    vitae sint!</p>
+
+
+                <h3 class="text-4xl mt-4">Specifications</h3>
+                <ul id="productSpecifications" class=" text-xl font-normal">
+                    <li>Backup Time: 4 hours</li>
+                    <li>Rated Power: 2000W</li>
+                    <li>Usable Capacity: 1.2kWh</li>
+                </ul>
+
+                <h3 class="mt-3 text-2xl">Offers & Discounts</h3>
+                <p id="productOffers" class="text-xl">10% off using code XYZ</p>
+                <button onclick="copyCode('XYZ')" class="text-blue-800 text-xl">Copy Code</button>
+                <h3 class="mt-4 text-2xl ">Services Offered</h3>
+                <ul id="servicesOffered">
+                    <li class="text-xl font-medium">Free Installation</li>
+                    <li class="text-xl font-medium">2-Year Warranty</li>
+
+
+                </ul>
+
+
+
+                <button onclick="openSidebar()"
+                    class=" mt-3 border-2 px-3 py-2 rounded-md text-xl hover:text-white hover:bg-[#ef4040]">Select
+                    Subscription Plan</button>
+
+
+                <button onclick="proceedToCheckout()"
+                    class=" mt-3  border-2 px-3 py-2 rounded-md text-xl hover:text-white hover:bg-[#ef4040]">Proceed to
+                    Checkout</button>
+                <button
+                    class=" hell mt-3  border-2 px-3 py-2 rounded-md text-xl hover:text-white hover:bg-[#ef4040]">BUY
+                    NOW</button>
+
+            </div>
+        </div>
+
+
+        <div id="rentalSidebar" class="sidebar">
+            <h2 class="mb-6 text-3xl">Our Subscription</h2>
+            <ul id="rentalPlans " class="flex flex-col text-xl gap-4">
+                <li>Plan 1: ₹100/month</li>
+                <li>Plan 2: ₹1000/year</li>
+
+            </ul>
+            <button onclick="closeSidebar()"
+                class=" mt-3 border-2 px-3 py-2 rounded-md text-xl hover:bg-[#ef4040]">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
